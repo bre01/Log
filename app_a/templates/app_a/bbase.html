@@ -1,0 +1,14 @@
+<head>Summertime Sadness</head>
+<p>
+    <a href="{% url 'app_a:index' %}">Home page</a>
+    <a href="{% url 'app_a:topics' %}">Topics</a>
+    {% if user.is_authenticated %}
+        hello, {{ request.user.username }}.
+        <a href="{% url 'users:logout' %} ">Log out</a>
+    {% else %} 
+        <a href="{% url 'users:register' %}"> register </a>
+        <a href="{% url 'users:login' %}">Log in</a>
+    {% endif %}
+
+</p>
+{% block content %} {% endblock content %}

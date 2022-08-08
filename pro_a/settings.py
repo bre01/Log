@@ -14,13 +14,13 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%c-w+%*#6_5@@e^r3=fta8l27p)pa!f2&$b@pc$3d+)obxm-!2'
+SECRET_KEY = '!82)dt2$jwwvq$-=gjd9tetsr63-_78@vahll2)$x$eam+qefd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #my apps
+    'app_a',
+    'app_b',        
+    'users',
+    #third part apps
+    'bootstrap4',
+    #default apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -118,3 +125,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#My settings
+LOGIN_URL='users:login'
+LOGIN_REDIRECT_URL='app_a:index'
+
+#Heroku settins
+
